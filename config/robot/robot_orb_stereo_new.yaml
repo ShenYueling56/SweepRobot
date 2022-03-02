@@ -1,0 +1,255 @@
+%YAML:1.0
+---
+# data_path and save_path ends with "/" since we use them by new_path = data_path + "sth" where sth has no leading "/"
+
+#data_path: /media/houj/ZX1_512G/dataset/myself/10/
+#save_path: /media/houj/ZX1_512G/dataset/myself/10/result/
+data_path: /media/qzj/Dataset/slamDataSet/sweepRobot/round3/10/
+save_path: /media/qzj/Dataset/slamDataSet/sweepRobot/round3/10/result/
+
+#voc_path: ../Vocabulary/orbvoc.dbow3
+voc_path: ../Vocabulary/ORBvoc.txt
+
+imu: 1
+num_of_cam: 2
+
+# Extrinsic parameter between IMU and Camera.
+estimate_extrinsic: 0   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T.cam, don't change it.
+# 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
+
+imageSize: [ 640, 480 ]
+cameraMatrixL: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [ 6.5063513961962474e+02, 0., 3.1102386215829705e+02, 0.,
+          6.5073383200409421e+02, 2.5009704771269028e+02, 0., 0., 1. ]
+cameraMatrixR: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [ 6.5228647347506649e+02, 0., 3.1514002092369026e+02, 0.,
+          6.5243178341923442e+02, 2.4035641300705899e+02, 0., 0., 1. ]
+distCoeffsL: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d
+  data: [ 2.1864469791802851e-01, -1.0899375627495136e+00,
+          6.1892353468128737e-04, -3.6107421851300692e-04,
+          1.5094480928669987e+00 ]
+distCoeffsR: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d
+  data: [ 1.7725360966026635e-01, -4.7404870771792829e-01,
+          4.5287494639198569e-04, -1.2173467807103197e-05,
+          -4.9121830167314789e-01 ]
+R: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.9998136792184334, 0.0006320368108816753, 0.01929267677563975, -0.0006157331977611835, 0.9999994483391733, -0.0008509958743474391, -0.01929320399334423, 0.000838958174566585, 0.9998135168264393]
+T: !!opencv-matrix
+  rows: 3
+  cols: 1
+  dt: d
+  data: [-117.8166905858287, 0.4178513284144075, 8.334983751593082]
+
+Tcr: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: d
+  data: [ 9.9986747407577814e-01, -6.8226750805159024e-03,
+          1.4781251302550086e-02, 8.5466398181509646e+01,
+          1.4315421180575921e-02, -6.3904151457477243e-02,
+          -9.9785336003990210e-01, -1.1690375058799215e+02,
+          7.7526125755224985e-03, 9.9793271843909681e-01,
+          -6.3798013033387904e-02, -6.1161879332575602e+01, 0., 0., 0., 1. ]
+Tcw: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: d
+  data: [ 9.9891118927664868e-01, 4.0807308919775132e-02,
+          2.2587127948432290e-02, 0,
+          2.4349424445028231e-02, -9.9876931040460548e-01, -4.3217051495200408e-02, 8.3540876399702356e-02,
+          -3.9780750774797181e-02, -4.4163425280900871e-02, 9.9823163296266648e-01,
+          -0.04, 0., 0., 0., 1. ]
+
+R1: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [ 9.9999823574256319e-01, -1.0428401771092769e-03,
+          1.5623687548084689e-03, 1.0415754557291396e-03,
+          9.9999912944123859e-01, 8.1008477020992956e-04,
+          -1.5632121836199298e-03, -8.0845601606403859e-04,
+          9.9999845138207055e-01 ]
+R2: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [ 9.9999909366928852e-01, 1.7514586024032356e-04,
+          1.3349099329193050e-03, -1.7406549907962720e-04,
+          9.9999965729679174e-01, -8.0938711437886907e-04,
+          -1.3350512362438334e-03, 8.0915401904277416e-04,
+          9.9999878145324272e-01 ]
+P1: !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [ 6.7387557957699221e+02, 0., 3.1081644058227539e+02, 0., 0.,
+          6.7387557957699221e+02, 2.4546117401123047e+02, 0., 0., 0., 1.,
+          0. ]
+P2: !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [ 6.7387557957699221e+02, 0., 3.1081644058227539e+02,
+          -8.0693107639419337e+04, 0., 6.7387557957699221e+02,
+          2.4546117401123047e+02, 0., 0., 0., 1., 0. ]
+Q: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: d
+  data: [ 1., 0., 0., -3.4138842773437500e+02, 0., 1., 0.,
+          -2.4569919967651367e+02, 0., 0., 0., 7.3461498140440949e+02, 0.,
+          0., 5.0799287662940699e-03, 4.9420127619998082e-02 ]
+
+
+Camera.type: "PinHole"
+Camera_fx: 6.7387557957699221e+02
+Camera_fy: 6.7387557957699221e+02
+Camera_cx: 3.1081644058227539e+02
+Camera_cy: 2.4546117401123047e+02
+
+Camera_k1: 0.0
+Camera_k2: 0.0
+Camera_p1: 0.0
+Camera_p2: 0.0
+Camera_width: 640
+Camera_height: 480
+
+Camera.bFishEye: 0
+Camera.fps: 50.0
+Camera.bf: 80.693107639419338
+Camera.RGB: 0
+ThDepth: 40.0
+
+Camera.scale: 1.1772
+use_odo_predict: 1
+speed_up: 1
+# MSCKF标定结果
+#Tbc: !!opencv-matrix
+#  rows: 4
+#  cols: 4
+#  dt: f
+#  data: [-0.019242,-0.001068,-0.999814,0.030881,0.999810,0.003036,-0.019245,-0.090187,0.003056,-0.999995,0.001009,-0.047235,0.,0.,0.,1.]
+
+#/*****IMU*****/
+# Transformation from camera 0 to body-frame (imu) 
+Tbc: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: f
+   data: [-0.01078808,-0.0053516,-0.99992749,-0.0190819,0.99993588,0.0033851,-0.01080629,-0.04077015,0.00344269,-0.99997995,0.00531474,0.10690639,0.,0.,0.,1.]
+
+# Transformation from odometer to camera 0
+Tc_odo: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: f
+  data: [-0.0,-1.0,-0.0, 0.06,-0.0,-0.0,-1.0, 0.03,1.0, 0.0, 0.0,-0.138,0.0, 0.0, 0.0, 1.0]
+
+# IMU noise 连续的
+
+#imu parameters       The more accurate parameters you provide, the better performance
+IMU.NoiseGyro: 0.0014006108167209043   # [ rad / s / sqrt(Hz) ]   ( gyro "white noise" ) 连续的
+IMU.NoiseAcc: 0.022705341628918071  
+IMU.GyroWalk: 0.000050477689654109284
+IMU.AccWalk: 0.00071342588229465884
+IMU.Frequency: 190
+g_norm: 9.7964     # gravity magnitude
+
+#unsynchronization parameters
+estimate_td: 0                      # online estimate time offset between camera and imu
+# initial value of time offset. unit:s. readed image clock + td = real image clock (IMU clock)
+td: -0.008                             
+
+LEFT.height: 480
+LEFT.width: 640
+LEFT.D: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d
+  data: [ 2.1864469791802851e-01, -1.0899375627495136e+00,
+          6.1892353468128737e-04, -3.6107421851300692e-04,
+          1.5094480928669987e+00 ]
+LEFT.K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [ 6.5063513961962474e+02, 0., 3.1102386215829705e+02, 0.,
+          6.5073383200409421e+02, 2.5009704771269028e+02, 0., 0., 1. ]
+LEFT.R: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [ 9.9999823574256319e-01, -1.0428401771092769e-03,
+          1.5623687548084689e-03, 1.0415754557291396e-03,
+          9.9999912944123859e-01, 8.1008477020992956e-04,
+          -1.5632121836199298e-03, -8.0845601606403859e-04,
+          9.9999845138207055e-01 ]
+LEFT.P: !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [ 6.7387557957699221e+02, 0., 3.1081644058227539e+02, 0., 0.,
+          6.7387557957699221e+02, 2.4546117401123047e+02, 0., 0., 0., 1.,
+          0. ]
+RIGHT.height: 480
+RIGHT.width: 640
+RIGHT.D: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d
+  data: [ 1.7725360966026635e-01, -4.7404870771792829e-01,
+          4.5287494639198569e-04, -1.2173467807103197e-05,
+          -4.9121830167314789e-01 ]
+RIGHT.K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [ 6.5228647347506649e+02, 0., 3.1514002092369026e+02, 0.,
+          6.5243178341923442e+02, 2.4035641300705899e+02, 0., 0., 1. ]
+RIGHT.R: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [ 9.9999909366928852e-01, 1.7514586024032356e-04,
+          1.3349099329193050e-03, -1.7406549907962720e-04,
+          9.9999965729679174e-01, -8.0938711437886907e-04,
+          -1.3350512362438334e-03, 8.0915401904277416e-04,
+          9.9999878145324272e-01 ]
+RIGHT.P: !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [ 6.7387557957699221e+02, 0., 3.1081644058227539e+02,
+          -8.0693107639419337e+04, 0., 6.7387557957699221e+02,
+          2.4546117401123047e+02, 0., 0., 0., 1., 0. ]
+
+ORBextractor.nFeatures: 800
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
